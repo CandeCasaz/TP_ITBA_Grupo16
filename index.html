@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mueblería Hermanos Jota</title>
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+ <header class="encabezado">
+    <div class="contenedor nav">
+      <a href="index.html" class="nav__marca">
+        <img src="img/logo.svg" alt="" class="nav__logo" />
+        Hermanos <span>Jota</span>
+      </a>
+
+      <input class="nav__checkbox" type="checkbox" id="menu-toggle" />
+      <label class="nav__toggle" for="menu-toggle"><span aria-hidden="true">☰</span></label>
+
+      <ul class="nav__menu" id="menu">
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <span class="boton-carrito">Carrito (<span>0</span>)</span>
+    </div>
+  </header>
+
+
+    <main>
+    <section class="hero">
+      <div class="contenedor hero__contenido">
+        <div class="hero__texto">
+          <p>Cada pieza envejece con gracia, desarrollando carácter mientras mantiene su belleza esencial.</p>
+          <h1 class="hero__titulo">Muebles que alimentan el alma, no solo el espacio.</h1>
+          <p class="hero__parrafo">Existimos en la intersección entre herencia e innovación. Cada pieza cuenta una historia de artesanía que honra el pasado mientras abraza el futuro.</p>
+          <div class="hero__acciones">
+            <a href="productos.html" class="boton boton--primario">Ver catálogo</a>
+            <a href="contacto.html" class="boton boton--salvia">Escribinos</a>
+          </div>
+        </div>
+        <div class="hero__galeria">
+          <div class="hero__foto hero__foto--grande">
+            <img src="img/sofaPatagonia.png" alt="Sofá Patagonia" />
+          </div>
+          <div class="hero__foto">
+            <img src="img/sillonCopacabana.png" alt="Sillón Copacabana" />
+          </div>
+          <div class="hero__foto">
+            <img src="img/butacaMendoza.png" alt="Butaca Mendoza" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <h2 class="seccion__titulo">Piezas destacadas</h2>
+        <p>ACá VAN A APARECER COMO TARJETAS LOS MUEBLES DESTACADOS</p>
+        </div>
+      </div>
+    </section>
+    </main>
+
+  <footer class="pie-pagina">
+    <div class="contenedor">
+      <p class="pie-pagina__marca">Hermanos <span>Jota</span></p>
+      <p>© 2026 Hermanos Jota. Redescubriendo el arte de vivir</p>
+    </div>
+  </footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>
