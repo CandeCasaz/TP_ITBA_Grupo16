@@ -1,4 +1,4 @@
-const PRODUCTOS = [
+const catalogo = [
  {
     id: 1,
     destacado: true,
@@ -114,3 +114,75 @@ const PRODUCTOS = [
     info: "Silla ergonómica regulable en altura con respaldo de malla transpirable y asiento tapizado en tejido reciclado. Diseñada para largas jornadas de trabajo con máximo confort y apoyo lumbar, ideal para  oficinas en casa y espacios de coworking.",
   },
 ];
+
+
+const contenedorCatalogo = document.querySelector("#catalogo-container");
+const buscador = document.querySelector("#buscador");
+const contadorCarrito = document.querySelector("#boton-carrito");
+let cantidadCarrito = 0;
+
+function mostrarProductos(productos) {
+
+    if (!contenedorCatalogo) {
+        return;
+    }
+    contenedorCatalogo.innerHTML = "";
+
+    productos.forEach((producto) => {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "producto";
+
+        tarjeta.innerHTML = `
+            <a href="producto.html?id=${producto.id}">
+                <img 
+                    src="${producto.imagen}" 
+                    alt="${producto.nombre}"
+                >
+                <h3>${producto.nombre}</h3>
+            </a>
+
+            <button class="btn-agregar">
+                Agregar al carrito
+            </button>
+        `;
+
+        const boton = tarjeta.querySelector(".btn-agregar");
+
+        boton.addEventListener("click", () => {
+
+            cantidadCarrito++;
+
+            if (contadorCarrito) {
+                contadorCarrito.textContent =
+                    cantidadCarrito;
+            }
+        });
+        contenedorCatalogo.appendChild(tarjeta);
+    });
+}
+
+
+// ===============================
+// BUSCADOR
+// ===============================
+
+if (buscador) {
+    buscador.addEventListener("input", () => {
+
+        const textoBuscado =
+            buscador.value.toLowerCase();
+        const resultados =
+            catalogo.filter((producto) =>
+                producto.nombre
+                    .toLowerCase()
+                    .includes(textoBuscado)
+            );
+        mostrarProductos(resultados);
+    });
+}
+
+
+
+if (contenedorCatalogo) {
+    mostrarProductos(catalogo);
+}
