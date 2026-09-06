@@ -368,9 +368,146 @@ p {
 .enlace-ver-mas { 
   margin-top: auto; 
   font-size: 0.85rem; 
-  color: #c47a6d; 
+  color: #30211f; 
   font-weight: 500; 
 }
+
+
+/*Contacto*/
+
+#contacto {
+  padding: 2.5rem 1.25rem 3.5rem;
+  background-color: #F5E6D3;
+}
+
+#contacto h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #A0522D;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem;
+  background-color: #F5E6D3;
+}
+
+#form-contacto div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+#form-contacto label {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #A0522D;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+  width: 100%;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid #A0522D;
+  background-color: #fffdf9;
+  color: #3d2918;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 12pt;
+  line-height: 1.6;
+}
+
+#form-contacto input {
+  border-radius: 20px 20px 20px 20px;
+}
+
+#form-contacto textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+#form-contacto input::placeholder,
+#form-contacto textarea::placeholder {
+  font-family: Inter, sans-serif;
+  font-weight: 300;
+  font-size: 9pt;
+  letter-spacing: 0.02em;
+  color: #C47A6D;
+}
+
+#form-contacto input:hover,
+#form-contacto textarea:hover {
+  border-color: #D4A437;
+}
+
+#form-contacto input:focus,
+#form-contacto textarea:focus {
+  outline: none;
+  border-color: #D4A437;
+  box-shadow: 0 0 0 2px rgba(212, 164, 55, 0.25);
+}
+
+
+#form-contacto button[type="submit"] {
+  display: block;
+  margin: 0.35rem auto 0;
+  margin-top: 0.35rem;
+  width: 30%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #87A96B;
+
+  background-color: #87A96B;
+
+  color: #fffdf9;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  border-radius: 20px 20px 20px 20px;
+}
+
+#form-contacto button[type="submit"]:hover,
+#form-contacto button[type="submit"]:focus {
+  background-color: #A0522D;
+  color: #fffdf9;
+}
+
+#form-contacto button[type="submit"]:active {
+  background-color: #87A96B;
+  border-color: #87A96B;
+}
+
+#mensaje-exito {
+  font-family: Inter, sans-serif;
+  font-weight: 300;
+  font-size: 9pt;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #87A96B;
+  min-height: 1.2em;
+}
+
+#mensaje-exito.error {
+  color: #C47A6D;
+  font-weight: 500;
+}
+
+
+
 
 @media (max-width: 480px) {
   .nav { 
@@ -408,10 +545,10 @@ p {
 }
 
 @media (min-width: 640px) {
-  #catalogo { 
+  #catalogo, #contacto { 
     padding: 3rem 2rem 4rem; 
   }
-  #catalogo-container, #destacados { 
+  #catalogo-container, #destacados, #contacto{ 
     grid-template-columns: repeat(2, 1fr); 
     gap: 1.75rem; 
   }
@@ -453,7 +590,7 @@ p {
 }
 
 @media (min-width: 1024px) {
-  #catalogo { 
+  #catalogo, #contacto { 
     padding: 4rem 4rem 5rem;
    }
   .buscador { 
@@ -462,7 +599,7 @@ p {
   .buscador input { 
     max-width: 32rem; 
   }
-  #catalogo-container, #destacados { 
+  #catalogo-container, #destacados, #contacto { 
     grid-template-columns: repeat(4, 1fr); 
     gap: 2rem; 
   }
