@@ -23,7 +23,6 @@ const catalogo = [
   },
   {
     id: 3,
-    destacado: true,
     nombre: "Butaca Mendoza",
     imagen: "img/butacaMendoza.png",
     medidas: "80 x 75 x 85 cm",
@@ -44,6 +43,7 @@ const catalogo = [
   },
   {
     id: 5,
+    destacado: true,
     nombre: "Mesa de Centro Araucaria",
     imagen: "img/mesaCentroAraucaria.png",
     medidas: "90 x 90 x 45 cm",
@@ -64,7 +64,7 @@ const catalogo = [
   },
   {
     id: 7,
-    nombre: "Sofa Patagonia",
+    nombre: "Sofá Patagonia",
     imagen: "img/sofaPatagonia.png",
     medidas: "220 x 90 x 80 cm",
     materiales: "Madera de eucalipto certificada FSC®, tapizado en lino orgánico",
@@ -116,10 +116,13 @@ const catalogo = [
 ];
 
 
+function obtenerProductoPorId(id) {
+    return catalogo.find((producto) => producto.id === id);
+}
+
+
 const contenedorCatalogo = document.querySelector("#catalogo-container");
 const buscador = document.querySelector("#buscador");
-const contadorCarrito = document.querySelector("#boton-carrito");
-let cantidadCarrito = 0;
 
 function mostrarProductos(productos) {
 
@@ -133,38 +136,17 @@ function mostrarProductos(productos) {
         tarjeta.className = "producto";
 
         tarjeta.innerHTML = `
-            <a href="producto.html?id=${producto.id}">
-                <img 
-                    src="${producto.imagen}" 
-                    alt="${producto.nombre}"
-                >
-                <h3>${producto.nombre}</h3>
-            </a>
-
-            <button class="btn-agregar">
-                Agregar al carrito
-            </button>
+            <img 
+                src="${producto.imagen}" 
+                alt="${producto.nombre}"
+            >
+            <h3>${producto.nombre}</h3>
+            <p>${producto.descripcion}</p>
+            <a class="enlace-ver-mas" href="producto.html?id=${producto.id}">Ver más...</a>
         `;
-
-        const boton = tarjeta.querySelector(".btn-agregar");
-
-        boton.addEventListener("click", () => {
-
-            cantidadCarrito++;
-
-            if (contadorCarrito) {
-                contadorCarrito.textContent =
-                    cantidadCarrito;
-            }
-        });
         contenedorCatalogo.appendChild(tarjeta);
     });
 }
-
-
-// ===============================
-// BUSCADOR
-// ===============================
 
 if (buscador) {
     buscador.addEventListener("input", () => {
@@ -180,8 +162,6 @@ if (buscador) {
         mostrarProductos(resultados);
     });
 }
-
-
 
 if (contenedorCatalogo) {
     mostrarProductos(catalogo);
