@@ -24,6 +24,7 @@ async function mostrarProducto() {
       <p><strong>Material:</strong> ${producto.materiales}</p>
       <p><strong>Medidas:</strong> ${producto.medidas}</p>
       <p><strong>Acabado: </strong>${producto.acabado}</p>
+      <p><strong>Precio: </strong>${producto.precio}</p>
       <button id="boton-agregar" class="boton boton--primario">Añadir al carrito</button>
       <p id="mensaje-agregado" class="confirmacion-carrito">¡Lo sumamos al carrito!</p>
     </div>
