@@ -125,7 +125,7 @@ p {
   color: #d4a437;
 }
 
-.nav_marca span, .pie-pagina__marca span {
+.nav__marca span, .pie-pagina__marca span {
   color: #a0522d;
 }
 
@@ -240,7 +240,7 @@ p {
   text-align: center;
 }
 
-.seccion_titulo, .hero_titulo {
+.seccion__titulo, .hero__titulo {
   font-family: Georgia, "Times New Roman", serif;
 }
 
@@ -315,7 +315,7 @@ p {
   letter-spacing: 0.02em;
 }
 
-.producto > a:first-child, .tarjeta-producto__visual, .tarjeta-producto__cuerpo {
+.tarjeta-producto__visual, .tarjeta-producto__cuerpo {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -372,23 +372,17 @@ p {
   font-weight: 500; 
 }
 
-
-/*Contacto*/
-
 #contacto {
-  padding: 2.5rem 1.25rem 3.5rem;
+  padding: 1rem 1.25rem 1.5rem;
   background-color: #F5E6D3;
 }
 
-#contacto h2 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 700;
-  font-size: 1.35rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #A0522D;
-  text-align: center;
-  margin-bottom: 2rem;
+#contacto .seccion__titulo {
+  margin-bottom: 0.5rem;
+}
+
+.seccion--contacto {
+  padding-bottom: 1rem;
 }
 
 #form-contacto {
@@ -397,7 +391,7 @@ p {
   gap: 1.25rem;
   max-width: 32rem;
   margin: 0 auto;
-  padding: 1.75rem 1.25rem;
+  padding: 0.5rem 1.25rem;
   background-color: #F5E6D3;
 }
 
@@ -408,7 +402,7 @@ p {
 }
 
 #form-contacto label {
-  font-family: Inter, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 500;
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -419,11 +413,11 @@ p {
 #form-contacto input,
 #form-contacto textarea {
   width: 100%;
-  padding: 0.75rem 1.1rem;
+  padding: 0.5rem 1rem;
   border: 1px solid #A0522D;
   background-color: #fffdf9;
   color: #3d2918;
-  font-family: Inter, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 400;
   font-size: 12pt;
   line-height: 1.6;
@@ -440,7 +434,7 @@ p {
 
 #form-contacto input::placeholder,
 #form-contacto textarea::placeholder {
-  font-family: Inter, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 300;
   font-size: 9pt;
   letter-spacing: 0.02em;
@@ -471,7 +465,7 @@ p {
   background-color: #87A96B;
 
   color: #fffdf9;
-  font-family: Inter, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 500;
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -492,7 +486,7 @@ p {
 }
 
 #mensaje-exito {
-  font-family: Inter, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 300;
   font-size: 9pt;
   letter-spacing: 0.02em;
@@ -545,10 +539,16 @@ p {
 }
 
 @media (min-width: 640px) {
-  #catalogo, #contacto { 
+  #catalogo { 
     padding: 3rem 2rem 4rem; 
   }
-  #catalogo-container, #destacados, #contacto{ 
+  #contacto {
+    padding: 1.25rem 2rem 2rem;
+  }
+  .seccion--contacto {
+    padding-bottom: 1.25rem;
+  }
+  #catalogo-container, #destacados{ 
     grid-template-columns: repeat(2, 1fr); 
     gap: 1.75rem; 
   }
@@ -590,16 +590,22 @@ p {
 }
 
 @media (min-width: 1024px) {
-  #catalogo, #contacto { 
+  #catalogo { 
     padding: 4rem 4rem 5rem;
-   }
+  }
+  #contacto {
+    padding: 1.5rem 4rem 0.75rem;
+  }
+  .seccion--contacto {
+    padding-bottom: 1.25rem;
+  }
   .buscador { 
     margin-bottom: 2.5rem; 
   }
   .buscador input { 
     max-width: 32rem; 
   }
-  #catalogo-container, #destacados, #contacto { 
+  #catalogo-container, #destacados { 
     grid-template-columns: repeat(4, 1fr); 
     gap: 2rem; 
   }
